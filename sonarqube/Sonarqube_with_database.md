@@ -45,7 +45,7 @@ SonarQube is an open-source static testing analysis software, it is used by deve
   ```
 `check point`: You should see postgres is running on 5432
 
-
+ netstat -tupln
 
 apt install net-tools
 
@@ -73,9 +73,14 @@ apt install net-tools
  ## SonarQube Setup
 
 1. Download [soarnqube](https://www.sonarqube.org/downloads/) and extract it.   
-  ```sh 
+  ```sh
+  cd /opt
   wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
   unzip sonarqube-8.9.2.46101.zip
+  mv sonarqube-8.9.2.46101 sonarqube
+  cd sonarqube
+  cd conf
+  vi sonar.properties
   ```
 
 1. Update sonar.properties with below information 
@@ -91,7 +96,7 @@ apt install net-tools
 
 1. Create a `/etc/systemd/system/sonarqube.service` file start sonarqube service at the boot time 
   ```sh   
-  cat >> /etc/systemd/system/sonarqube.service <<EOL
+  vi /etc/systemd/system/sonarqube.service
   [Unit]
   Description=SonarQube service
   After=syslog.target network.target
@@ -111,19 +116,19 @@ apt install net-tools
 
   [Install]
   WantedBy=multi-user.target
-  EOL
   ```
 
 1. Add sonar user and grant ownership to /opt/sonarqube directory 
   ```sh 
   useradd -d /opt/sonarqube sonar
-  chown -R sonar:sonar
+  chown -R sonar:sonar /opt/sonarqube
   ```
 
 1. Reload the demon and start sonarqube service 
   ```sh 
   systemctl daemon-reload 
-  systemctl start sonarqube.service 
+  systemctl start sonarqube.service
+  ps -ef |grep sonar
   ```
 
 
