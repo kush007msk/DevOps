@@ -23,7 +23,8 @@ SonarQube is an open-source static testing analysis software, it is used by deve
   ```
 
 1. Set a password and connect to database (setting password as "admin" password)
-  ```sh 
+  ```sh
+  cat /etc/passwd
   sudo passwd postgres
   su - postgres
   ```
