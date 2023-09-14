@@ -19,6 +19,7 @@ SonarQube is an open-source static testing analysis software, it is used by deve
   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
   sudo apt-get update
   sudo apt-get -y install postgresql
+  systemctl status postgresql
   ```
 
 1. Set a password and connect to database (setting password as "admin" password)
