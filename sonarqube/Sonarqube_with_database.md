@@ -122,6 +122,7 @@ apt install net-tools
   ```sh 
   useradd -d /opt/sonarqube sonar
   chown -R sonar:sonar /opt/sonarqube
+  ls -l /opt/sonarqube
   ```
 
 1. Reload the demon and start sonarqube service 
