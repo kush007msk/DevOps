@@ -39,7 +39,8 @@ SonarQube is an open-source static testing analysis software, it is used by deve
   ``` 
 
 1. Restart postgres database to take latest changes effect 
-  ```sh 
+  ```sh
+  exit to root user
   systemctl restart postgresql 
   systemctl status postgresql
   ```
