@@ -52,14 +52,14 @@ apt install net-tools
 
 `Source: https://docs.sonarqube.org/latest/requirements/requirements/`
 
-1. Added below entries in `/etc/sysctl.conf`
+1. Added below entries in `vi /etc/sysctl.conf`
   ```sh 
   vm.max_map_count=524288
   fs.file-max=131072
   ulimit -n 131072
   ulimit -u 8192
   ```
-1. Add below entries in `/etc/security/limits.conf`
+1. Add below entries in `vi /etc/security/limits.conf`
   ```sh 
   sonarqube   -   nofile   131072
   sonarqube   -   nproc    8192
