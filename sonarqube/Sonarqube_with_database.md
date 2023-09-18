@@ -95,7 +95,7 @@ apt install net-tools
   #sonar.search.javaOpts=-Xmx512m -Xms512m -XX:MaxDirectMemorySize=256m -XX:+HeapDumpOnOutOfMemoryError
   ``
 
-1. Create a `/etc/systemd/system/sonarqube.service` file start sonarqube service at the boot time 
+1. Create a `vi /etc/systemd/system/sonarqube.service` file start sonarqube service at the boot time 
   ```sh   
   vi /etc/systemd/system/sonarqube.service
   [Unit]
